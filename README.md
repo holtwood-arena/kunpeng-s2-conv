@@ -48,7 +48,9 @@ scripts/  构建 / 采集 / 汇总
 | 03 | [methodology](docs/03-methodology.md) | **性能优化是受控实验** ← 核心 |
 | 04 | [experiment-protocol](docs/04-experiment-protocol.md) | 实验协议 / 记录模板 / 判定与回滚 |
 | 05 | [roadmap](docs/05-roadmap.md) | 10 个假设驱动的实验序列 |
-| 06 | [interview](docs/06-interview.md) | 面试讲法与追问准备 |
+| 06 | [interview](docs/06-interview.md) | 面试讲法与追问准备（框架） |
+| 07 | [interview-script](docs/07-interview-script.md) | **逐字稿 + 简历条目**（可直接背） |
+| 08 | [qa-bank](docs/08-qa-bank.md) | 20 道高频追问及答法 |
 
 ## 边界声明
 
