@@ -1,6 +1,6 @@
 # 实验记录
 
-一次实验一个文件，命名 `E##-<slug>.md`，模板见 [`../06-experiment-protocol.md`](../06-experiment-protocol.md)。
+一次实验一个文件，命名 `E##-<slug>.md`，模板见 [`../04-experiment-protocol.md`](../04-experiment-protocol.md)。
 
 | 编号 | 标题 | 判决 |
 |---|---|---|

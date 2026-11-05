@@ -1,7 +1,7 @@
 # 实验序列（假设驱动）
 
 > 这不是「优化步骤清单」，而是**一串待验证的假设**。
-> 每个实验的完整记录见 `docs/experiments/E##-*.md`，规范见 `06-experiment-protocol.md`。
+> 每个实验的完整记录见 `docs/experiments/E##-*.md`，规范见 `04-experiment-protocol.md`。
 
 ## 总表
 

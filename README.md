@@ -38,16 +38,24 @@ scripts/  构建 / 采集 / 汇总
 
 ## 阅读顺序
 
-1. [`docs/05-methodology.md`](docs/05-methodology.md) — **方法论：性能优化是受控实验**（先读这个）
-2. [`docs/06-experiment-protocol.md`](docs/06-experiment-protocol.md) — 实验协议、记录模板、判定与回滚规则
-3. [`docs/03-roadmap.md`](docs/03-roadmap.md) — 10 个假设驱动的实验序列与止损条件
-4. [`docs/00-facts.md`](docs/00-facts.md) — 赛题与评测口径的事实
-5. [`docs/01-baseline.md`](docs/01-baseline.md) — 基线代码分析
-6. [`docs/02-prior-art.md`](docs/02-prior-art.md) — 公开获奖实现调研（SME 是分水岭）
-7. [`docs/04-interview.md`](docs/04-interview.md) — 面试讲法与追问准备
+按编号顺序读即可。若只有五分钟，直接读 **03 方法论**。
+
+| # | 文档 | 内容 |
+|---|---|---|
+| 00 | [facts](docs/00-facts.md) | 赛题、评测口径、四案规模与算术强度 |
+| 01 | [baseline](docs/01-baseline.md) | 30 行基线代码的四个具体问题 |
+| 02 | [prior-art](docs/02-prior-art.md) | 公开获奖实现调研（SME 是分水岭） |
+| 03 | [methodology](docs/03-methodology.md) | **性能优化是受控实验** ← 核心 |
+| 04 | [experiment-protocol](docs/04-experiment-protocol.md) | 实验协议 / 记录模板 / 判定与回滚 |
+| 05 | [roadmap](docs/05-roadmap.md) | 10 个假设驱动的实验序列 |
+| 06 | [interview](docs/06-interview.md) | 面试讲法与追问准备 |
 
 ## 边界声明
 
 - 本仓库**不包含**任何参赛队伍的源码。获奖实现仅以链接与要点索引的方式引用。
 - 所有性能数字将标注采集环境；**x86 本地数据不代表鲲鹏 920F 平台表现**。
 - 未实测的内容一律标注为「未验证」。
+
+## 相关仓库
+
+- [`kunpeng-s3-openfoam`](https://github.com/holtwood/kunpeng-s3-openfoam) — S3 赛季 OpenFOAM 应用优化（已归档，仅静态分析）

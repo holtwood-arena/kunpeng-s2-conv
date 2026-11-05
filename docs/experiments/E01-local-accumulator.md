@@ -6,7 +6,7 @@
   - SHA-256 `bb34cc60053b74a928ba15519015d1ff3b89ba67cc462048d38e916ffcf08961`
 - 本版：`src/conv2d_v1.c`
   - SHA-256 `485cdb222b5a7f253e1a4c6585e8e3ee58a2e165b5bfae24414103e76f54ba74`
-- 环境：`<实测时按 06-experiment-protocol 第 4 节填写>`
+- 环境：`<实测时按 04-experiment-protocol 第 4 节填写>`
 
 ## 1. 观察（动手前的证据）
 
