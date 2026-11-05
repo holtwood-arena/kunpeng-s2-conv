@@ -7,10 +7,11 @@ cd "$(dirname "$0")/.."
 SRC="${1:-src/conv2d_v0.c}"
 OUT="${2:-build/conv2d_test}"
 CC="${CC:-gcc}"
-CFLAGS="${CFLAGS:--O3 -fopenmp -march=native}"
+CFLAGS="${CFLAGS:--O3 -fopenmp -march=native -ffp-contract=off}"
 
 mkdir -p build
 echo "[build] $SRC -> $OUT"
 echo "[build] CC=$CC CFLAGS=$CFLAGS"
+echo "[build] 注意: -ffp-contract=off 是精度必需项（见 E01），去掉会触发 FMA 收缩导致 1e-5 容差 FAIL"
 "$CC" $CFLAGS bench/bench_conv.c "$SRC" -lm -o "$OUT"
 echo "[build] done"
