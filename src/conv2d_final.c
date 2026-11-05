@@ -1,23 +1,11 @@
-/* E12 输出维度向量化（8 输出 × SIMD lane）
+/* E13 VB=64：路数扫描峰值
  *
- * 背景（来自 v3 的汇编证据）：
- *   v3 的 4 路分块被 GCC 向量化到了 **ik（归约）维度**：
- *   主循环是 4 条 vmulps(ymm) 算 4 个重叠窗口，随后用一大串
- *   vunpcklps / vshufps / vextractf128 做交错合并，最后才标量累加。
- *   perf 实测：IPC 2.34，但 FLOP/cycle 只有约 1.9 —— 大部分指令花在 shuffle 上。
+ * 本文件由 conv2d_v7.c 只改 VB 常量得到，用于隔离「一次并行处理多少个输出」
+ * 这个单一变量。除 VB 外，循环结构、寻址、尾块逻辑与 v7 完全一致。
  *
- * 假设：
- *   把向量化维度从「归约维度 ik」换成「输出维度 i」，
- *   让 8 个不同输出共享同一条向量累加器，就不需要任何交错/水平归约。
- *   而且每个 lane 对应一个独立输出，其 jk→ik 累加顺序与标量版本逐位一致，
- *   所以精度应当仍是 0 误差。
+ * 用途：定位本机 x86 的峰值点；注意这是 x86 特定结果，ARM 上不可直接外推。
  *
- * 证伪条件：
- *   1) GFLOPS 相对 v3 提升小于 2 倍抖动；
- *   2) 任一用例 FAIL 或误差非零。
- *
- * 结果：<待实测>
- * 代价：绑定向量宽度（8 路需 256-bit；128-bit NEON 上只能 4 路）。
+ * 完整记录见 docs/experiments/E13-vector-width-sweep.md
  */
 
 #include <string.h>
@@ -27,7 +15,7 @@
 typedef float CONVFLOAT;
 typedef int CONVINT;
 
-#define VB 8  /* 一次并行计算的输出个数 */
+#define VB 64  /* 一次并行计算的输出个数 */
 
 void conv2d(const CONVFLOAT* input, CONVINT inputHeight, CONVINT inputWidth,
             const CONVFLOAT* kernel, CONVINT kernelHeight, CONVINT kernelWidth,

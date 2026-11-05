@@ -14,4 +14,5 @@
 | [E08](E08-omp-schedule.md) | OpenMP 调度策略 | **REJECT**（−0.1%，噪声内） |
 | [E09](E09-block2x4.md) | 2 行 × 4 列分块 | **REJECT**（−3%，噪声内） |
 | E10 | 算法级（可选） | 不做（容差制约） |
-| [E12](E12-output-dimension-vectorization.md) | **输出维度向量化** | **KEEP**（×2.5，当前最优） |
+| [E12](E12-output-dimension-vectorization.md) | 输出维度向量化 | **KEEP**（×2.5）⚠ 归因已被 E13 修正 |
+| [E13](E13-vector-width-sweep.md) | **向量宽度扫描** | **KEEP**（VB=64，×5.2~6.5，当前最优） |
