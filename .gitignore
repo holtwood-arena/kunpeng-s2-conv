@@ -1,0 +1,7 @@
+build/
+*.o
+*.out
+submission/
+bench/results/*.csv
+bench/results/*.log
+!bench/results/.gitkeep
