@@ -10,7 +10,15 @@
 | 题目 | 鲲鹏高性能计算全球挑战赛 S2 · CONV 赛题（二维有效卷积，FP32） |
 | 基线 | 官方 `conv2d.c`，30 行，四重循环 + `#pragma omp parallel for` |
 | 评测 | 4 组官方用例，正确性容差 `1e-5`，按 GFLOPS 排名 |
-| 本仓库目标 | 个人学习项目 / 面试作品，**不参与比赛**（S2 已于 2026-09-15 截止） |
+| 本仓库目标 | 交付**一套性能优化方法论 + 完整实施记录**，用于面试；**不参与比赛**（S2 已于 2026-09-15 截止） |
+
+## 核心主张
+
+> 性能优化不是「改代码直到变快」，而是**在约束下做受控实验**：
+> 建立可信测量 → 用证据定位瓶颈 → 用可证伪的假设驱动改动 → 用数据决定保留或回滚。
+
+本项目刻意**不做**硬件特化（SME / 手写汇编）和尺寸硬编码：
+前者无法在通用环境验证、讲不清原理就是负资产，后者是刷榜手段而非工程能力。
 
 ## 为什么做这道题
 
@@ -30,11 +38,13 @@ scripts/  构建 / 采集 / 汇总
 
 ## 阅读顺序
 
-1. [`docs/00-facts.md`](docs/00-facts.md) — 赛题与评测口径的事实
-2. [`docs/01-baseline.md`](docs/01-baseline.md) — 基线代码分析
-3. [`docs/02-prior-art.md`](docs/02-prior-art.md) — 公开获奖实现调研（**重要：SME 是分水岭**）
-4. [`docs/03-roadmap.md`](docs/03-roadmap.md) — 分阶段优化路线与止损线
-5. [`docs/04-interview.md`](docs/04-interview.md) — 面试讲法与追问准备
+1. [`docs/05-methodology.md`](docs/05-methodology.md) — **方法论：性能优化是受控实验**（先读这个）
+2. [`docs/06-experiment-protocol.md`](docs/06-experiment-protocol.md) — 实验协议、记录模板、判定与回滚规则
+3. [`docs/03-roadmap.md`](docs/03-roadmap.md) — 10 个假设驱动的实验序列与止损条件
+4. [`docs/00-facts.md`](docs/00-facts.md) — 赛题与评测口径的事实
+5. [`docs/01-baseline.md`](docs/01-baseline.md) — 基线代码分析
+6. [`docs/02-prior-art.md`](docs/02-prior-art.md) — 公开获奖实现调研（SME 是分水岭）
+7. [`docs/04-interview.md`](docs/04-interview.md) — 面试讲法与追问准备
 
 ## 边界声明
 
