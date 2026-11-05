@@ -9,7 +9,8 @@
 | `conv2d_v2.c` | **E05**：`__restrict`（REJECT，−3.0%） |
 | `conv2d_v3.c` | **E04**：输出分块 4 路（KEEP，×3.0~3.4，**当前最优**） |
 | `conv2d_v4.c` | **E07**：输出分块 8 路（REJECT，−19.2%） |
-| `conv2d_final.c` | 最终选定版本 |
+| `conv2d_v5.c` | **E09**：2 行 × 4 列（REJECT，−3%） |
+| `conv2d_final.c` | 最终选定版本（= v3） |
 
 约定：
 
