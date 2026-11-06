@@ -1,5 +1,7 @@
 # 鲲鹏 HPC 挑战赛 S2 · CONV 算子优化
 
+> Part of [holtwood-arena](https://github.com/holtwood-arena) · 比赛与 benchmark 归档
+
 > 一个从朴素四重循环出发的 FP32 二维卷积优化项目：本地 x86 参考环境上相对基线
 > **×17~21.6**（13.6 → 232~294 GFLOPS），实测 **12.1 FLOP/cycle**；鲲鹏平台尚未复测。
 > 最大收益来自两次自我纠正：先发现编译器把向量化维度选错了（×2.5），
@@ -63,4 +65,4 @@ scripts/  构建 / 采集 / 汇总
 
 ## 相关仓库
 
-- [`kunpeng-s3-openfoam`](https://github.com/holtwood/kunpeng-s3-openfoam) — S3 赛季 OpenFOAM 应用优化（已归档，仅静态分析）
+- [`kunpeng-s3-openfoam`](https://github.com/holtwood-arena/kunpeng-s3-openfoam) — S3 赛季 OpenFOAM 应用优化（已归档，仅静态分析）
